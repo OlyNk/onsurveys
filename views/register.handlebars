@@ -1,0 +1,32 @@
+<h2 class="page-header">Εγγραφή</h2>
+{{#if mail}}
+        <div class="alert alert-danger">Email has taken already try new</div> 
+{{/if}} 
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/users/register">
+   <div class="form-group">
+    <label>Όνομα</label>
+    <input type="text" class="form-control" placeholder="Όνομα" name="name">
+  </div>
+  <div class="form-group">
+    <label>Επίθετο</label>
+    <input type="text" class="form-control" placeholder="Επίθετο" name="lname">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Κωδικός</label>
+    <input type="password" class="form-control" placeholder="Κωδικός" name="password">
+  </div>
+  <div class="form-group">
+    <label>Επιβεβαίωση Κωδικού</label>
+    <input type="password" class="form-control" placeholder="Κωδικός" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Εγγραφή</button>
+</form>
